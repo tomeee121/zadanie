@@ -51,10 +51,10 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0);
     border: 0.5px rgb(186, 197, 199) solid;
     border-radius: 3px;
-    z-index: 100px;
+    z-index: 100;
     background-color: blanchedalmond;
     width: 700px;
     max-width: 90%;
@@ -86,6 +86,23 @@
     font-weight: 200;
     padding: 1vw 1.5vw;
 }
+
+.none-background{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+
+.none-background.active{
+    pointer-events: all;
+    opacity: 1;
+}
+
 
 
 @media (min-width: 1100px) {
