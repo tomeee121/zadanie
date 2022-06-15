@@ -7,7 +7,7 @@ let backgroundOfPopUp = document.querySelector(":not(#popUp)");
 let header = document.getElementById('mainHeader');
 let ifPoppedUp = false;
 
-let clickCounter = 0;
+let clickCounterNumber = JSON.parse(localStorage.getItem('clickCounterNumber'));
 
 openButton.addEventListener('click',() => {
 popUp.style.transform = "translate(-50%, -50%) scale(1)";
@@ -32,12 +32,17 @@ closeButton.addEventListener('click',() => {
 
 function clickCounter()  
 {
-    clickCounter++;
-    localStorage.setItem("clickCounter", clickCounter);
+    clickCounterNumber++;
+    localStorage.setItem("clickCounterNumber", JSON.stringify(clickCounterNumber));
 
     let popUpBody = document.querySelector(".pop-up-body");
     let p = document.createElement("span");
-    let text = document.createTextNode(localStorage.getItem("clickCounter"));
+
+    let text = document.createTextNode('You have clicked this button ' + JSON.parse(localStorage.getItem('clickCounterNumber'))+ ' times so far.');
+    if(JSON.parse(localStorage.getItem('clickCounterNumber')) === 1) {
+       text = document.createTextNode('You have clicked this button first time.');
+    }
+
     p.append(text);
     popUpBody.append(p);
 }    
