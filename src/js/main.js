@@ -7,6 +7,8 @@ let backgroundOfPopUp = document.querySelector(":not(#popUp)");
 let header = document.getElementById('mainHeader');
 let ifPoppedUp = false;
 
+// localStorage.setItem("clickCounterNumber", 0);
+
 let clickCounterNumber = JSON.parse(localStorage.getItem('clickCounterNumber'));
 
 openButton.addEventListener('click',() => {
@@ -18,7 +20,7 @@ overlay.style.right = "0";
 overlay.style.bottom = "0";
 overlay.style.opacity = "1";
 overlay.style.backgroundColor = "rgba(0, 0, 0, .5)";
-overlay.style.pointerEvents = "all";
+overlay.style.pointerEvents = "none";
 ifPoppedUp = true;});
 
 if(ifPoppedUp){
@@ -36,15 +38,20 @@ function clickCounter()
     localStorage.setItem("clickCounterNumber", JSON.stringify(clickCounterNumber));
 
     let popUpBody = document.querySelector(".pop-up-body");
-    let p = document.createElement("span");
 
-    let text = document.createTextNode('You have clicked this button ' + JSON.parse(localStorage.getItem('clickCounterNumber'))+ ' times so far.');
+    //when create information about first click addying elements to div is acceptable 
+    let p = document.createElement("span");
+    let text = null;
     if(JSON.parse(localStorage.getItem('clickCounterNumber')) === 1) {
        text = document.createTextNode('You have clicked this button first time.');
+       
+        p.append(text);
+        popUpBody.append(p);
+    }
+    else{
+    popUpBody.innerHTML = 'You have clicked this button ' + JSON.parse(localStorage.getItem('clickCounterNumber'))+ ' times so far.';
     }
 
-    p.append(text);
-    popUpBody.append(p);
 }    
                                   
 
