@@ -6,7 +6,10 @@
 }
 
 #mainHeader img{
-    margin-top: 5vh;
+    margin-top: 3vh;
+    padding-top: 1vw;
+    margin-left: 1.5vw;
+
 }
 
 #mainHeader header{
@@ -22,7 +25,7 @@
 
 .flexCenter{
     display: flex;
-    flex-wrap: nowrap;
+    padding: 2.3vw 2vw;
 }
 
 #mainHeader div{
@@ -61,18 +64,28 @@
     #mainHeader{
         width: 750px;
     }
+    .flexCenter{
+        display: block;
+    }
         
     }
  @media (max-width: 800px) and (min-width: 500px) {
     #mainHeader{
          width: 450px;
     }
-        
+    .flexCenter{
+        display: block;
     }
+    
+    }
+
     @media (max-width: 500px) {
 
         #mainHeader{
             width: 90%;
+        }
+        .flexCenter{
+            display: block;
         }
         
         }
