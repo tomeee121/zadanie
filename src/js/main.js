@@ -23,11 +23,6 @@ overlay.style.backgroundColor = "rgba(0, 0, 0, .5)";
 overlay.style.pointerEvents = "none";
 ifPoppedUp = true;});
 
-if(ifPoppedUp){
-    popUp.closest.addEventListener(onclick,() => {
-    alert('sdf')})
-    }
-
 closeButton.addEventListener('click',() => {
     popUp.style.transform = "translate(-50%, -50%) scale(0)";
     overlay.style.opacity = "0";});
@@ -52,6 +47,24 @@ function clickCounter()
     popUpBody.innerHTML = 'You have clicked this button ' + JSON.parse(localStorage.getItem('clickCounterNumber'))+ ' times so far.';
     }
 
-}    
-                                  
+}
+
+//closing in the popup when clicked out of it's space. Header-div is being clicked upon before popup rendered so two first clicks does not count
+let iterator = 0;
+function closeFromBehindClick(){
+    if(ifPoppedUp){
+    iterator++;
+        if(iterator === 2){
+            popUp.style.transform = "translate(-50%, -50%) scale(0)";
+            overlay.style.opacity = "0";
+            iterator = 0;
+        }
+    }
+    // if(overlay.style.opacity = "0"){
+    //     alert(document.body.addEventListener('click', alert('svdvds')))
+    // }
+    // if(ifPoppedUp){iterator++; setTimeout(document.body.addEventListener('click', alert('svdvds')), 5000);
+    
+    // if(iterator > 2){document.body.addEventListener('click', alert('svdvds'))}}
+}                             
 
