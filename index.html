@@ -15,15 +15,20 @@
             <p>Infinitely scalable, feature-rich and cloud-native data management and protection for modern and legacy infrastructures and SaaS 
                 platforms, managed via a single app with hardware required.
             </p>
-            <button type="button">Button</button>
+            <button id="open-popup-button" type="button">Button</button>
         </div>
     </div>        
 
-    <div class="pop-up">
+    <div id="popUp" class="pop-up">
         <div class="pop-up-header">
             <div class="pop-up-title">Alert!</div>
-            <button class="exit-button">&times;</button>
+            <button id="close-button" class="exit-button">&times;</button>
         </div>
         <div class="pop-up-body">You have clicked this button X times</div>
     </div>
+    <div id="overlay"></div>
 </body>
+</html>
+
+<script src="src/js/main.js"></script>
+
