@@ -1,10 +1,10 @@
-let openButton = document.getElementById("open-popup-button");
-let closeButton = document.getElementById("close-button");
-let overlay = document.getElementById("overlay");
-let popUp = document.getElementById("popUp");
+const openButton = document.getElementById("open-popup-button");
+const closeButton = document.getElementById("close-button");
+const overlay = document.getElementById("overlay");
+const popUp = document.getElementById("popUp");
 
-let backgroundOfPopUp = document.querySelector(":not(#popUp)");
-let header = document.getElementById('mainHeader');
+const backgroundOfPopUp = document.querySelector(":not(#popUp)");
+const header = document.getElementById('mainHeader');
 let ifPoppedUp = false;
 
 // localStorage.setItem("clickCounterNumber", 0);
@@ -60,11 +60,5 @@ function closeFromBehindClick(){
             iterator = 0;
         }
     }
-    // if(overlay.style.opacity = "0"){
-    //     alert(document.body.addEventListener('click', alert('svdvds')))
-    // }
-    // if(ifPoppedUp){iterator++; setTimeout(document.body.addEventListener('click', alert('svdvds')), 5000);
-    
-    // if(iterator > 2){document.body.addEventListener('click', alert('svdvds'))}}
 }                             
 
